@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Fare Calculator</title>
+</head>
+<body>
+    <h2>Flight Fare Calculation Module</h2>
+
+    <script>
+        function calculateFare(seatType, basePrice, tax) {
+            let extra = 0;
+
+            if (seatType === "Economy") extra = 0;
+            else if (seatType === "Business") extra = 1000;
+            else if (seatType === "FirstClass") extra = 2000;
+
+            return basePrice + extra + (basePrice * tax);
+        }
+    </script>
+</body>
+</html>
