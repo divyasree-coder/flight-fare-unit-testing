@@ -1,0 +1,21 @@
+name: HTML Test CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test-html:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ✅ Checkout repository
+        uses: actions/checkout@v4
+
+      - name: ✅ Install HTMLHint
+        run: npm install -g htmlhint
+
+      - name: ✅ Run HTML tests
+        run: htmlhint "**/*.html"
